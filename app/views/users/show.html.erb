@@ -1,0 +1,7 @@
+<h1>Success!</h1>
+
+<ul>
+  <% @user.images.each do |image| %>
+  <li><%= image_tag(image.photo) %></li>
+  <% end %>
+</ul>

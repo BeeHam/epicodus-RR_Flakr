@@ -2,8 +2,8 @@
 
 <%= form_for [@user, @image], html: { multipart: true } do |f| %>
   <%= f.label :photo %>
-    <%= f.file_field :photo %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    <%= f.submit "Upload" %>
+  <%= f.file_field :photo %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.submit "Upload" %>
 <% end %>
