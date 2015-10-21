@@ -4,9 +4,19 @@ class ImagesController < ApplicationController
     @image = @user.images.new
   end
 
+  def create
+    @user = User.find(params[:user_id])
+    @image = @user.images.new(image_params)
+    if @image.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def image_params
-    params.require(:image).permit(:photo_file_name, :photo_content_type, :photo_file_size, :description)
+    params.require(:image).permit(:photo, :description)
   end
 end
