@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'users#index'
+  root 'static#index'
 
   resources :users, only: [:show, :index] do
     resources :images
