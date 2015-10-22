@@ -1,9 +1,10 @@
-<h1>Success!</h1>
+<h1>Welcome <%= @user.username %></h1>
 
 <ul>
   <% @user.images.each do |image| %>
   <li><%= image_tag(image.photo) %><%= image.description %>
   <%= link_to "Edit", edit_user_image_path(@user, image) %>
+  <%= link_to "Delete", user_image_path(@user, image), :method => 'delete' %>
   </li>
   <% end %>
 </ul>
