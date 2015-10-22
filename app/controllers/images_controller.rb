@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  # before_action :authorize, only: [:edit, :update, :destroy]
+
   before_action :authenticate_user!
 
   def new

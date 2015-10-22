@@ -3,11 +3,11 @@ require 'rails_helper'
 describe "add an image" do
   it "adds an image to user" do
     login_user
-    visit user_path(2)
+    click_link "cat"
     click_link "Add an image"
     image = FactoryGirl.create(:image)
     click_on 'Save'
-    expect(page).to have_content "Welcome to Flakr"
+    expect(page).to have_content "Logged in as"
   end
 
   def login_user
