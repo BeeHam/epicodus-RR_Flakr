@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :password) }
   end
+
+  def authorize
+    redirect_to root_path, alert: "Not authorized" if current_user.nil?
+  end
+
 end

@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  before_action :authorize, only: [:edit, :update, :destroy]
+
   def new
     @user = User.find(params[:user_id])
     @image = @user.images.new
